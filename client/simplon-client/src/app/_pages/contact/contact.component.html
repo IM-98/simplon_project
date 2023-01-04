@@ -1,0 +1,32 @@
+<h3 class="title">
+  Contactez-nous !
+</h3>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+  <!-- Champ Username -->
+  <app-input label="Nom/Prénom" formControlName="username" field="username" placeholder="Votre Nom" type="text"></app-input>
+
+  <ng-container *ngIf="username.touched && username.errors">
+    <small *ngIf="username.errors!=['required']">Champs requis</small>
+    <small *ngIf="username.errors!=['minlength']">Username must have at least 5 characters (Currently:
+      {{ username.value.length }})</small>
+    <small *ngIf="username.errors!=['maxlength']">Username must have at most 15 characters (Currently:
+      {{ username.value.length }})</small>
+  </ng-container>
+
+  <!-- Champ Email -->
+  <app-input label="Adresse E-Mail" formControlName="email" field="email" placeholder="Votre adresse E-Mail" type="email"></app-input>
+
+  <ng-container *ngIf="email.touched && email.errors">
+    <small *ngIf="email.errors!=['required']">Champs requis</small>
+  </ng-container>
+
+  <!-- Champ Message -->
+  <app-input label="Message" formControlName="message" field="message" placeholder="Ecrivez ici votre message..." type="textarea"></app-input>
+
+  <ng-container *ngIf="message.touched && message.errors">
+    <small *ngIf="message.errors!=['required']">Champs requis</small>
+  </ng-container>
+
+  <app-button type="submit" className="submit" value="Envoyer"></app-button>
+</form>

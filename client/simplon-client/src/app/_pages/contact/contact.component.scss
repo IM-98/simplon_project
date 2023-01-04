@@ -1,0 +1,32 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.validbutton {
+  margin-top: 7%;
+}
+
+// Liens Cliquables
+.link {
+  text-decoration: none;
+  color: #007AFF;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+small {
+  color: red;
+}
+
