@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './_pages/menu/menu.component';
 import { AvisComponent } from './_pages/avis/avis.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LocalisationComponent } from './_pages/localisation/localisation.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReservationComponent,
     HeaderComponent,
     MenuComponent,
-    AvisComponent
+    AvisComponent,
+    LocalisationComponent
   ],
   imports: [
     BrowserModule,
