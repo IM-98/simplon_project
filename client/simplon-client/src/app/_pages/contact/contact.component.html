@@ -8,10 +8,6 @@
 
   <ng-container *ngIf="username.touched && username.errors">
     <small *ngIf="username.errors!=['required']">Champs requis</small>
-    <small *ngIf="username.errors!=['minlength']">Username must have at least 5 characters (Currently:
-      {{ username.value.length }})</small>
-    <small *ngIf="username.errors!=['maxlength']">Username must have at most 15 characters (Currently:
-      {{ username.value.length }})</small>
   </ng-container>
 
   <!-- Champ Email -->
