@@ -199,7 +199,6 @@ README.html
 *.iml
 .idea
 .exercism
-application.properties
 
 node_modules
 
