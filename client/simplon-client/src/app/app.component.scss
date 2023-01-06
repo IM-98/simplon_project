@@ -8,13 +8,10 @@
   }
 }
 
-.reservation {
-  display: flex;
-  margin-left: 12%;
-  margin-top: 26%;
-}
-
 .circle {
   background-color: sandybrown;
-  width: 100%;
-}
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  transform: translate(647px, -50px);
+ }
