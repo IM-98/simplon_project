@@ -1,9 +1,9 @@
 <nav class="menu">
-    <img class="logo" routerLink="/app" src="/assets/images/header/logo.png" alt="GastroNoGeek">
+    <img [routerLink]="'/'" src="/assets/images/header/logo.png" alt="GastroNoGeek">
     <div class="nav">
       <ul>
         <ng-container *ngFor="let item of nav">
-          <li [routerLink]="'/' + (item)">{{item}}</li>
+          <li [routerLink]="'/' + (item)">{{ item | uppercase }}</li>
         </ng-container>
         </ul>
     </div>
