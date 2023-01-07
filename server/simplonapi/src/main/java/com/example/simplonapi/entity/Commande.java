@@ -8,7 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -26,5 +28,8 @@ public class Commande {
 	@JoinColumn(name="id-reservation")
 	private Reservation reservation;
 	@ManyToMany
+    @JoinTable( name = "commande_menu_asociations",
+                joinColumns = @JoinColumn( name = "id_commande" ),
+                inverseJoinColumns = @JoinColumn( name = "id_menu" ) )
 	private List<Menu> menu;
 }
