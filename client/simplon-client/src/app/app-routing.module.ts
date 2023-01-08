@@ -18,7 +18,7 @@ const routes: Routes = [
   component: ContactComponent,
 },
 {
-  path: 'cartes',
+  path: 'cartes & menu',
   component: MenuComponent,
 },
 {
