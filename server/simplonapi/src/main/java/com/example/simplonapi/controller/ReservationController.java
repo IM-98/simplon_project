@@ -30,13 +30,13 @@ public class ReservationController {
     }
 
     @PostMapping(path = "/new")
-    public Reservation addReservation(Reservation resa){
+    public Reservation addReservation(@RequestBody Reservation resa){
         return iReservationService.save(resa);
     }
 
     @PutMapping(path = "/update")
-    public Optional<Reservation> updateById(int id, Optional<Reservation> resa){
-        return  iReservationService.updateById(id, resa);
+    public Reservation updateById(Reservation resa){
+        return  iReservationService.update(resa);
     }
 
 

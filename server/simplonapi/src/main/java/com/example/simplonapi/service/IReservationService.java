@@ -17,7 +17,7 @@ public interface IReservationService {
 
     String delete(Reservation resa);
 
-    Optional<Reservation> updateById(int id, Optional<Reservation> resa);
+    Reservation update( Reservation resa);
 
 
 

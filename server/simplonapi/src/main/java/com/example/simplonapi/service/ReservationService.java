@@ -43,11 +43,16 @@ public class ReservationService implements IReservationService{
     }
 
     @Override
-    public Optional<Reservation> updateById(int id, Optional<Reservation> resa){
+    public Reservation update(Reservation resa){
 
-        Optional<Reservation> reservationToUpdate =  reservationRepository.findById(id);
-        reservationToUpdate = resa;
+        Optional<Reservation> reservationToUpdate =  reservationRepository.findById(resa.getId());
+        if (reservationToUpdate.isEmpty())
+        	return null;
+        
+        Reservation reservation=reservationToUpdate.get();
+        reservation=resa;
+        reservationRepository.save(reservation);
 
-        return reservationToUpdate;
+        return reservation;
     }
 }
