@@ -2,6 +2,8 @@ package com.example.simplonapi.entity;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,11 +23,16 @@ public class Reservation {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_reservation")
 	private int id;
+	
 	private Date horaire;
+	
 	private int nbrPersonne;
+	
 	@ManyToOne
-	@JoinColumn(name="id_client")
+	@JoinColumn(name="id_client",referencedColumnName="id_client")
+	@JsonBackReference
 	private Client client;
+	
 	@OneToOne
 	@JoinColumn(name="id_commande")
 	private Commande commande;
