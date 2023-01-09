@@ -6,6 +6,7 @@ import { AvisComponent } from './_pages/avis/avis.component';
 import { ContactComponent } from './_pages/contact/contact.component';
 import { MenuComponent } from './_pages/menu/menu.component';
 import { ReservationComponent } from './_pages/reservation/reservation.component';
+import { CartesComponent } from './_pages/cartes/cartes.component';
 
 const routes: Routes = [
 
@@ -24,6 +25,10 @@ const routes: Routes = [
 },
 {
   path: 'cartes & menu',
+  component: CartesComponent,
+},
+{
+  path: 'menu',
   component: MenuComponent,
 },
 {

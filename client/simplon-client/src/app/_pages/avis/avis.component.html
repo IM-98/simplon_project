@@ -1,2 +1,43 @@
-<H1>Development in Progress</H1>
+<form [formGroup]="avisForm" (ngSubmit)="onSubmit()">
+
+  <h3 class="title">
+    Laissez votre avis !
+  </h3>
+
+  <hr>
+  <div class="">
+      <h4 class="tm-text-primary text-center">Titre</h4><i class="date">le 09/01/2022</i><b> par Jean-jaques</b>
+    <p>blablablablablablablablablablablablablablablablablablablablabla</p>
+  </div>
+  <hr>
+  <div class="">
+    <h4 class="tm-text-primary text-center">Titre</h4><i class="date">le 09/01/2022</i><b> par Jean-jaques</b>
+  <p>blablablablablablablablablablablablablablablablablablablablabla</p>
+  </div>
+
+  <hr>
+  <!-- Champ Username -->
+  <app-input label="Nom/Prénom" formControlName="username" field="username" placeholder="Votre Nom" type="text"></app-input>
+
+  <ng-container *ngIf="username.touched && username.errors">
+    <small *ngIf="username.errors!=['required']">Champs requis</small>
+  </ng-container>
+
+  <!-- Champ Email -->
+  <app-input label="Adresse E-Mail" formControlName="email" field="email" placeholder="Votre adresse E-Mail" type="email"></app-input>
+
+  <ng-container *ngIf="email.touched && email.errors">
+    <small *ngIf="email.errors!=['required']">Champs requis</small>
+  </ng-container>
+
+  <!-- Champ Message -->
+  <app-input label="Message" formControlName="message" field="message" placeholder="Ecrivez ici votre message..." type="textarea"></app-input>
+
+  <ng-container *ngIf="message.touched && message.errors">
+    <small *ngIf="message.errors!=['required']">Champs requis</small>
+  </ng-container>
+
+  <app-button type="submit" className="submit" value="ENVOYEZ VOTRE AVIS"></app-button>
+</form>
+
 
