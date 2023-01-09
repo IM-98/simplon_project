@@ -1,0 +1,17 @@
+.resabutton {
+  background-color: white;
+  font-family: Montserrat, sans-serif;
+  font-weight: bolder;
+  font-size: larger;
+  border-radius: 10px;
+  border-color: sandybrown;
+  border-width: 5px;
+  cursor: pointer;
+  transition: 1s all;
+
+  &:hover, &:focus {
+    border-color: rgb(236, 99, 49);
+}
+
+}
+

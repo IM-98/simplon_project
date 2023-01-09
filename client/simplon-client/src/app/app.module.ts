@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LocalisationComponent } from './_pages/localisation/localisation.component';
 import { HomeComponent } from './_pages/home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { HomeComponent } from './_pages/home/home.component';
     MenuComponent,
     AvisComponent,
     LocalisationComponent,
-    HomeComponent
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,

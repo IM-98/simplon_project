@@ -1,5 +1,5 @@
 import { HomeComponent } from './_pages/home/home.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LocalisationComponent } from './_pages/localisation/localisation.component';
 import { AvisComponent } from './_pages/avis/avis.component';
