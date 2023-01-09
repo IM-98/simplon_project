@@ -1,0 +1,38 @@
+form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 1em;
+  padding: 1em;
+  font-weight: bold;
+  font-size: medium;
+  padding-top: 15%;
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+  }
+
+  small {
+    color: red;
+  }
+}
+
+b {
+  font-size: small;
+}
+
+.date {
+  color: black;
+  font-style: italic;
+  font-size: x-small;
+}
+
+hr {
+  width: 50%;
+  color: #FF9A3D;
+}

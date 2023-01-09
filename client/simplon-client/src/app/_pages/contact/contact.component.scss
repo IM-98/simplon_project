@@ -1,21 +1,22 @@
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   gap: 1em;
   padding: 1em;
   font-weight: bold;
-  font-size: small;
-}
+  font-size: medium;
 
-h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  h3 {
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+  }
 
-small {
-  color: red;
+  small {
+    color: red;
+  }
 }
-
