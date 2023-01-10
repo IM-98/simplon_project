@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/menu")
+@RequestMapping("/menus")
 public class MenuController {
     @Autowired
     IMenuService iMenuService;
@@ -18,13 +18,13 @@ public class MenuController {
     public Menu addNewMenu(@RequestBody Menu menu){
         return iMenuService.save(menu);
     }
-    @GetMapping("/")
+    @GetMapping("")
     public Iterable<Menu> getMenu(){
         return iMenuService.findAll();
     }
 
-    @GetMapping("/id:")
-    public Optional<Menu> getMenuById(@RequestParam int id){
+    @GetMapping("/{id}")
+    public Optional<Menu> getMenuById(@PathVariable("id") int id){
         return iMenuService.findById(id);
     }
 

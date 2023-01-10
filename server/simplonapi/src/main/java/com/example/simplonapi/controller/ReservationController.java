@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/reservation")
+@RequestMapping(path = "/reservations")
 public class ReservationController {
     @Autowired
     private IReservationService iReservationService;
 
-    @GetMapping(path = "/get")
-    public Optional<Reservation> getReservationById (@RequestParam int Id){
+    @GetMapping(path = "/{id}")
+    public Optional<Reservation> getReservationById (@PathVariable("id") int Id){
         return iReservationService.findById(Id);
     }
 
-    @GetMapping(path = "/getAll")
+    @GetMapping(path = "")
     public Iterable<Reservation> getAllReservation(){
         return iReservationService.findAll();
     }

@@ -1,7 +1,7 @@
 package com.example.simplonapi.service;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +24,11 @@ public class AvisService implements IAvisService{
 	@Override
 	public Iterable<Avis> findAll() {
 		return avisRepository.findAll();
+	}
+
+	@Override
+	public Optional<Avis> findById(int id) {
+		
+		return avisRepository.findById(id);
 	}
 }
