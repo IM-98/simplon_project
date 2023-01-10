@@ -1,7 +1,7 @@
 package com.example.simplonapi.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,8 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Data
@@ -20,12 +19,23 @@ public class Menu {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_menu")
 	private int id;
+	
 	private String entree;
+	
 	private String plat;
+	
 	private String dessert;
-	@ManyToMany
-    @JoinTable( name = "commande_menu_asociations",
-                joinColumns = @JoinColumn( name = "id_menu" ),
-                inverseJoinColumns = @JoinColumn( name = "id_commande" ) )
-    private List<Commande> commandes = new ArrayList<>();
+	
+	private String urlImage;
+	
+	@ManyToOne
+	@JsonBackReference
+	@JoinColumn(name="id_carte",referencedColumnName="id_carte",nullable=true)
+	private Carte carte;
+	
+	@ManyToOne
+	@JsonBackReference
+	private Reservation reservation;
+	
+	
 }

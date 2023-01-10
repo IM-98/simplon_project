@@ -33,13 +33,12 @@ public class Client {
 	private String mail;
 	
 	@OneToMany(mappedBy="client")
-	@JsonBackReference
-	private List<Avis> avis;
+	@JsonManagedReference
+	private List<Avis> avis = new ArrayList<>();
 	
 	@OneToMany(mappedBy="client" )
 	@JsonManagedReference
-	
-	private List<Reservation> reservation=new ArrayList<>();
+	private List<Reservation> reservation = new ArrayList<>();
 	
 
 }
