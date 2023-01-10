@@ -13,9 +13,7 @@
   &:hover, &:focus {
     border-color: rgb(236, 99, 49);
 }
-
 }
-
 
 .submit {
   display: flex;
@@ -24,7 +22,7 @@
   width: 100%;
   padding: 0.9em;
   justify-content: center;
-  align-items: center;
+ // align-items: center;
   font-weight: bold;
   border-radius: 6px;
   border: none;

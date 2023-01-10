@@ -1,9 +1,8 @@
 .home {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 4em;
-  margin-left: -53em;
+  margin-left: 5em;
   font-weight: bolder;
 
   h1 {
@@ -12,16 +11,15 @@
     color: #FF9A3D;
     }
   }
-
 }
 
-.imgHome {
-  position: fixed;
-  clip-path: ellipse(33% 22%);
-  transform: translate(845px, -215px);
-  width: 40%;
-  z-index: 2;
-}
+// .imgHome {
+//   position: fixed;
+//   clip-path: ellipse(33% 22%);
+//   transform: translate(845px, -215px);
+//   width: 40%;
+//   z-index: 2;
+// }
 
 .resabutton {
   display: flex;
@@ -31,7 +29,7 @@
 
 .reservation {
  margin-left: -1em;
- margin-top: 10%;
+ margin-top: 5%;
 }
 
 

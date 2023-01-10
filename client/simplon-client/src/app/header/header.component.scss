@@ -1,7 +1,6 @@
 .menu {
   display: flex;
   padding: 1em;
-  width: 100vw;
   margin-left: 2%;
 
   ul {
@@ -9,7 +8,6 @@
     flex-direction: row;
     gap: 2.5em;
     font-weight: bolder;
-
 
     li {
       display: flex;
