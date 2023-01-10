@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 4em;
-  margin-left: -47em;
+  margin-left: -53em;
   font-weight: bolder;
 
   h1 {
@@ -12,6 +12,27 @@
     color: #FF9A3D;
     }
   }
+
 }
+
+.imgHome {
+  position: fixed;
+  clip-path: ellipse(33% 22%);
+  transform: translate(845px, -215px);
+  width: 40%;
+  z-index: 2;
+}
+
+.resabutton {
+  display: flex;
+  justify-content: center;
+
+}
+
+.reservation {
+ margin-left: -1em;
+ margin-top: 10%;
+}
+
 
 

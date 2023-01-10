@@ -15,6 +15,7 @@ import { LocalisationComponent } from './_pages/localisation/localisation.compon
 import { HomeComponent } from './_pages/home/home.component';
 import { CartesComponent } from './_pages/cartes/cartes.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
