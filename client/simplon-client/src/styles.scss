@@ -3,11 +3,9 @@
 html, body {
   background-color: white;
   color: black;
-  width: 100%;
-  height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  // overflow-x: hidden;
   font-family: Montserrat, sans-serif;
 
   .circleTop {
@@ -27,24 +25,6 @@ html, body {
     border-radius: 50%;
     height: 350px;
     width: 350px;
-  }
-
-  footer {
-    display: flex;
-    align-content: flex-end;
-    justify-content: space-evenly;
-    margin-left: 12em;
-    margin-top: 13em;
-    font-weight: bolder;
-
-    img {
-      display: flex;
-      justify-content: left;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-    }
-
   }
 }
 

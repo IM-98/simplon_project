@@ -1,19 +1,21 @@
 .container {
   display: flex;
-  //height: 100%;
- // width: 100%;
-
-  .main {
-    flex: 1;
-  }
+  flex-direction: column;
 }
 
-.circle {
-  background-color: sandybrown;
-  border-radius: 50%;
-  height: 500px;
-  width: 500px;
-  transform: translate(647px, -50px);
- }
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  font-weight: bolder;
+
+  img {
+    display: flex;
+    justify-content: left;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+}
 
 
