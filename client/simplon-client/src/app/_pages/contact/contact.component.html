@@ -1,7 +1,8 @@
-<h3 class="title">
-  Contactez-nous !
-</h3>
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+  <h3 class="title">
+    Contactez-nous !
+  </h3>
 
   <!-- Champ Username -->
   <app-input label="Nom/Prénom" formControlName="username" field="username" placeholder="Votre Nom" type="text"></app-input>
@@ -24,5 +25,5 @@
     <small *ngIf="message.errors!=['required']">Champs requis</small>
   </ng-container>
 
-  <app-button type="submit" className="submit" value="Envoyer"></app-button>
+  <app-button type="submit" className="submit" value="ENVOYER"></app-button>
 </form>

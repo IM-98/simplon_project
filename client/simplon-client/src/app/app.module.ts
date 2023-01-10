@@ -13,6 +13,7 @@ import { AvisComponent } from './_pages/avis/avis.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LocalisationComponent } from './_pages/localisation/localisation.component';
 import { HomeComponent } from './_pages/home/home.component';
+import { CartesComponent } from './_pages/cartes/cartes.component';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { HomeComponent } from './_pages/home/home.component';
     AvisComponent,
     LocalisationComponent,
     HomeComponent,
-
+    CartesComponent
   ],
   imports: [
     BrowserModule,
