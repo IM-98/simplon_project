@@ -1,7 +1,11 @@
 package com.example.simplonapi.controller;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +17,9 @@ import com.example.simplonapi.entity.Avis;
 import com.example.simplonapi.entity.Client;
 import com.example.simplonapi.service.IAvisService;
 
+import dto.AvisDto;
+
+@CrossOrigin
 @RestController
 @RequestMapping("/avis")
 public class AvisController {
@@ -21,8 +28,14 @@ public class AvisController {
 	
 	@GetMapping(path="")
 	@ResponseBody
-	Iterable<Avis> getAllAvis(){
-		return avisService.findAll();
+	List<AvisDto> getAllAvis(){
+		Iterable<Avis> result=avisService.findAll();
+		List<AvisDto> retour=new ArrayList<>();
+		result.forEach(avis->{
+			AvisDto avisDto=new AvisDto(avis);
+			retour.add(avisDto);
+		});
+		return retour;
 	}
 	
 	@PostMapping(path="/new")

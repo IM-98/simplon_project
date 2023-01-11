@@ -28,6 +28,6 @@ public class Carte {
 	private String resume;
 	
 	@OneToMany(mappedBy="carte",cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-	@JsonManagedReference
+	@JsonManagedReference(value="carte")
 	private List<Menu> menu;
 }
