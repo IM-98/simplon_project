@@ -1,1 +1,15 @@
-<H1>Development in Progress</H1>
+<h1>Liste des réservations : </h1>
+
+<ul>
+    <li *ngFor="let reservation of listeReservations" class="res__card">
+        <span>
+            Nombre de personne: 
+            {{reservation.nbrPersonne}}           
+        </span>
+        <span>
+            Date:
+            {{reservation.horaire}}
+        </span>
+        <button (click)= getReservationById(reservation.id)> Voir détails</button>
+    </li>
+</ul>
