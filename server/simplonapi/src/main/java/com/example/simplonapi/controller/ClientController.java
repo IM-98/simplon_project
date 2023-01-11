@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/clients")
 public class ClientController {
     @Autowired
     IClientService iClientService;
@@ -17,13 +17,13 @@ public class ClientController {
     public Client addNewClient(@RequestBody Client client){
         return iClientService.save(client);
     }
-    @GetMapping("/")
+    @GetMapping("")
     public Iterable<Client> getClient(){
         return iClientService.findAll();
     }
 
-    @GetMapping("/id:")
-    public Optional<Client> getClientById(@RequestParam int id){
+    @GetMapping("/{id}")
+    public Optional<Client> getClientById(@PathVariable("id") int id){
         return iClientService.findById(id);
     }
 
