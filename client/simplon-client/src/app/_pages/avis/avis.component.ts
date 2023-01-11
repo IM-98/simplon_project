@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { Avis } from 'src/app/models/Avis';
+import { AvisService } from 'src/app/services/avis.service';
 @Component({
   selector: 'app-avis',
   templateUrl: './avis.component.html',
@@ -10,10 +11,22 @@ import { Router } from '@angular/router';
 export class AvisComponent {
 
   avisForm!: FormGroup;
+  // listeAvis!: Avis[]
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private avisService: AvisService) {}
+
+  getAvis(){
+    this.avisService.getAllAvis().subscribe(res =>{ 
+      // this.listeAvis = res
+    console.log(res)})
+  }
+
+
 
   ngOnInit(): void {
+
+    this.getAvis()
+  
     this.avisForm = this.formBuilder.group ({
         username: ['', [
           Validators.required,

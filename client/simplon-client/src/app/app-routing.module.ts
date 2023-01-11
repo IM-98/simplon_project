@@ -36,7 +36,7 @@ const routes: Routes = [
   component: LocalisationComponent,
 },
 {
-  path: 'reservation',
+  path: "reservation",
   component: ReservationComponent,
 }
 

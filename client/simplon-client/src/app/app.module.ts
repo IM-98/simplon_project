@@ -14,8 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LocalisationComponent } from './_pages/localisation/localisation.component';
 import { HomeComponent } from './_pages/home/home.component';
 import { CartesComponent } from './_pages/cartes/cartes.component';
-
-
+import { HttpClientModule} from "@angular/common/http"
+import { ReservationService } from './services/reservation.service';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,15 +29,18 @@ import { CartesComponent } from './_pages/cartes/cartes.component';
     AvisComponent,
     LocalisationComponent,
     HomeComponent,
-    CartesComponent
+    CartesComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
