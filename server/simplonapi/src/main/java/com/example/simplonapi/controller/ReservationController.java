@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping(path = "/reservations")
 public class ReservationController {
@@ -23,8 +24,8 @@ public class ReservationController {
         return iReservationService.findAll();
     }
 
-    @DeleteMapping(path = "/delete")
-    public String deleteReservationById(@RequestParam int Id){
+    @DeleteMapping(path = "/delete/{id}")
+    public String deleteReservationById(@PathVariable("id") int Id){
 
         return iReservationService.deleteByID(Id);
     }
