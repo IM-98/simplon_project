@@ -1,25 +1,35 @@
 package com.example.simplonapi.dto;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.simplonapi.entity.Avis;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.example.simplonapi.entity.Avis;
+import com.example.simplonapi.entity.Client;
+import com.example.simplonapi.service.IClientService;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class AvisDto {
+	
+	
 	private String text;
 	
 	private String titre;
-	
-	private Date date;
+
+	//private Date date;
 	
 	private String  nomClient;
 	
+	private String email;
+	
 	public AvisDto(Avis avis) {
-		this.date=avis.getDate();
+		//this.date=avis.getDate();
+
 		this.nomClient=avis.getClient().getNom();
 		this.titre=avis.getTitre();
 		this.text=avis.getText();
@@ -37,5 +47,13 @@ public class AvisDto {
 		});
 		return retour;
 	}
+	
+	public  static Avis toAvis(AvisDto avisDto, IClientService clientService) {
+		System.out.println(avisDto.email+"jkdjkdhjkd");
+		Client client= clientService.findByMail(avisDto.email).get();
+		Avis avis=Avis.builder().client(client).text(avisDto.text).titre(avisDto.titre).build();
+		return avis;
+	}
+
 
 }
