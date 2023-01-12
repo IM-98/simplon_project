@@ -1,4 +1,4 @@
-package dto;
+package com.example.simplonapi.dto;
 
 import java.sql.Date;
 import java.util.ArrayList;
