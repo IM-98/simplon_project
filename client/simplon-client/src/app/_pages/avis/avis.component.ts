@@ -28,7 +28,7 @@ export class AvisComponent {
     this.getAvis()
 
     this.avisForm = this.formBuilder.group ({
-        username: ['', [
+        titre: ['', [
           Validators.required,
           Validators.minLength(5),
           Validators.maxLength(15)
@@ -44,8 +44,8 @@ export class AvisComponent {
 
       });
 }
-      get username() {
-        return this.avisForm.get('username') as FormControl;
+      get titre() {
+        return this.avisForm.get('titre') as FormControl;
       }
       get email() {
         return this.avisForm.get('email') as FormControl;
