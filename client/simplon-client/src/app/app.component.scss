@@ -3,6 +3,28 @@
   flex-direction: column;
 }
 
+.circleTop {
+  top: -190px;
+  right: -220px;
+  position: fixed;
+  background-color: sandybrown;
+  border-radius: 50%;
+  height: 650px;
+  width: 650px;
+  background: linear-gradient(158.5deg, #FF9A3D -5.95%, rgba(255, 255, 255, 0) 194.11%);
+}
+
+.circleBottom {
+  bottom: -120px;
+  left: -90px;
+  position: fixed;
+  background-color: sandybrown;
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;
+  background: linear-gradient(204.08deg, #FF9A3D 16.67%, rgba(255, 255, 255, 0) 78.1%);
+}
+
 .footer {
   display: flex;
   align-items: flex-end;
