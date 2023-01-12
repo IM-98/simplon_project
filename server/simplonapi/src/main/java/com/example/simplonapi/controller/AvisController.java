@@ -1,7 +1,6 @@
 package com.example.simplonapi.controller;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,18 +28,12 @@ public class AvisController {
 	@GetMapping(path="")
 	@ResponseBody
 	List<AvisDto> getAllAvis(){
-		Iterable<Avis> result=avisService.findAll();
-		List<AvisDto> retour=new ArrayList<>();
-		result.forEach(avis->{
-			AvisDto avisDto=new AvisDto(avis);
-			retour.add(avisDto);
-		});
-		return retour;
-	}
+		Iterable<Avis> listAvis=avisService.findAll();
+		return AvisDto.toListAvisDto((List<Avis>)listAvis);
+		}
 	
 	@PostMapping(path="/new")
 	public Avis addAvis(@RequestBody Avis avis) {
-		System.out.println("fait2");
 		return avisService.save(avis);
 	}
 	

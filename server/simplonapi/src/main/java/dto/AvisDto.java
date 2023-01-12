@@ -1,6 +1,8 @@
 package dto;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.example.simplonapi.entity.Avis;
 
@@ -21,6 +23,19 @@ public class AvisDto {
 		this.nomClient=avis.getClient().getNom();
 		this.titre=avis.getTitre();
 		this.text=avis.getText();
+	}
+	
+	public static AvisDto toAvisDto(Avis avis) {		
+		return new AvisDto(avis);
+	}
+	
+	public static List<AvisDto> toListAvisDto(List<Avis> listAvis){
+		List<AvisDto> retour=new ArrayList<>();
+		listAvis.forEach(avis->{
+			AvisDto avisDto=AvisDto.toAvisDto(avis);
+			retour.add(avisDto);
+		});
+		return retour;
 	}
 
 }
