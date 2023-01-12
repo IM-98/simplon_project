@@ -1,5 +1,5 @@
 <h3 class="title">
-  Laissez votre avis !
+  Nos clients nous ont dit :
 </h3>
 
 <hr>
@@ -8,19 +8,21 @@
     <h4 class="tm-text-primary text-center">{{avis.titre}}</h4><i class="date">{{avis.date}}</i><b> par {{avis.nomClient}}</b>
     <p>{{avis.text}}</p>
   </div>
-  <hr>
-
+ <hr>
 </div>
 
+<h3 class="title">
+  Laissez le votre !
+</h3>
 
 <form [formGroup]="avisForm" (ngSubmit)="onSubmit()">
 
   <!-- Champ Username -->
-  <app-input label="Nom/Prénom" formControlName="username" field="username" placeholder="Votre Nom" type="text">
+  <app-input label="titre" formControlName="titre" field="titre" placeholder="Titre de votre commentaire" type="text">
   </app-input>
 
-  <ng-container *ngIf="username.touched && username.errors">
-    <small *ngIf="username.errors!=['required']">Champs requis</small>
+  <ng-container *ngIf="titre.touched && titre.errors">
+    <small *ngIf="titre.errors!=['required']">Champs requis</small>
   </ng-container>
 
   <!-- Champ Email -->
