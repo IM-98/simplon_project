@@ -12,19 +12,23 @@ export class AvisComponent {
 
   avisForm!: FormGroup;
   listeAvis!: Avis[]
+
   newAvis!: Avis
+
 
   constructor(private formBuilder: FormBuilder, private router: Router, private avisService: AvisService) {}
 
   getAvis(){
+
     this.avisService.getAllAvis().subscribe(res =>{ this.listeAvis = res
+
     console.log(res)})
   }
 
   ngOnInit(): void {
 
     this.getAvis()
-  
+
     this.avisForm = this.formBuilder.group ({
         titre: ['', [
           Validators.required,
