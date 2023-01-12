@@ -11,13 +11,13 @@ import { AvisService } from 'src/app/services/avis.service';
 export class AvisComponent {
 
   avisForm!: FormGroup;
-  // listeAvis!: Avis[]
+  listeAvis!: Avis[]
 
   constructor(private formBuilder: FormBuilder, private router: Router, private avisService: AvisService) {}
 
   getAvis(){
-    this.avisService.getAllAvis().subscribe(res =>{ 
-      // this.listeAvis = res
+    this.avisService.getAllAvis().subscribe(res =>{
+    this.listeAvis = res
     console.log(res)})
   }
 
@@ -26,7 +26,7 @@ export class AvisComponent {
   ngOnInit(): void {
 
     this.getAvis()
-  
+
     this.avisForm = this.formBuilder.group ({
         username: ['', [
           Validators.required,
@@ -39,7 +39,7 @@ export class AvisComponent {
         ]],
         message: ['', [
           Validators.required,
-          Validators.minLength(500)
+          Validators.maxLength(500)
         ]]
 
       });
