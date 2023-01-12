@@ -13,25 +13,24 @@
   }
 }
 
+.welcome {
+  order: 4;
+}
 .imgHome {
+  order: 3;
   position: fixed;
   clip-path: ellipse(35% 40%);
-  transform: translate(835px, -75px);
-  width: 40%;
+  transform: translate(815px, -15px);
+  width: 35%;
   z-index: 2;
 }
-
 
 .resabutton {
   display: flex;
   justify-content: center;
-
 }
 
 .reservation {
  margin-left: -1em;
  margin-top: 5%;
 }
-
-
-

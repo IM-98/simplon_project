@@ -24,7 +24,7 @@ const routes: Routes = [
   component: ContactComponent,
 },
 {
-  path: 'cartes & menu',
+  path: 'cartes',
   component: CartesComponent,
 },
 {
@@ -36,7 +36,7 @@ const routes: Routes = [
   component: LocalisationComponent,
 },
 {
-  path: 'reservation',
+  path: "reservation",
   component: ReservationComponent,
 }
 
