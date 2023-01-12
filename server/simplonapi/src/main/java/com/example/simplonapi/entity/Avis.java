@@ -1,4 +1,4 @@
-package com.example.simplonapi.entity;
+  package com.example.simplonapi.entity;
 
 import java.sql.Date;
 
@@ -12,11 +12,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="avis")
 @Data
+@Builder @AllArgsConstructor @NoArgsConstructor
 public class Avis{
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -27,7 +31,7 @@ public class Avis{
 	
 	private String titre;
 	
-	private Date date;
+	//private Date date;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonBackReference

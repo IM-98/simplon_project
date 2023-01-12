@@ -16,6 +16,7 @@ import com.example.simplonapi.dto.AvisDto;
 import com.example.simplonapi.entity.Avis;
 import com.example.simplonapi.entity.Client;
 import com.example.simplonapi.service.IAvisService;
+import com.example.simplonapi.service.IClientService;
 
 @CrossOrigin
 @RestController
@@ -23,6 +24,9 @@ import com.example.simplonapi.service.IAvisService;
 public class AvisController {
 	@Autowired
 	IAvisService avisService;
+	
+	@Autowired 
+	IClientService clientService;
 	
 	@GetMapping(path="")
 	@ResponseBody
@@ -32,8 +36,8 @@ public class AvisController {
 		}
 	
 	@PostMapping(path="/new")
-	public Avis addAvis(@RequestBody Avis avis) {
-		return avisService.save(avis);
+	public Avis addAvis(@RequestBody AvisDto avis) {
+		return avisService.save(AvisDto.toAvis(avis, clientService));
 	}
 	
 	@GetMapping(path="/{id}")
