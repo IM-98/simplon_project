@@ -13,15 +13,17 @@ export class AvisComponent {
   avisForm!: FormGroup;
   listeAvis!: Avis[]
 
+  newAvis!: Avis
+
+
   constructor(private formBuilder: FormBuilder, private router: Router, private avisService: AvisService) {}
 
   getAvis(){
-    this.avisService.getAllAvis().subscribe(res =>{
-    this.listeAvis = res
+
+    this.avisService.getAllAvis().subscribe(res =>{ this.listeAvis = res
+
     console.log(res)})
   }
-
-
 
   ngOnInit(): void {
 
@@ -37,7 +39,7 @@ export class AvisComponent {
           Validators.required,
           Validators.email
         ]],
-        message: ['', [
+        text: ['', [
           Validators.required,
           Validators.maxLength(500)
         ]]
@@ -50,16 +52,21 @@ export class AvisComponent {
       get email() {
         return this.avisForm.get('email') as FormControl;
       }
-      get message() {
-        return this.avisForm.get('message') as FormControl;
+      get text() {
+        return this.avisForm.get('text') as FormControl;
       }
 
+
+      
   onSubmit() {
     if (this.avisForm!.valid) {
+      console.log("cliqué")
+      console.log(this.avisForm.value)
+      // this.avisService.newAvis(this.avisForm.value).subscribe(res => this.newAvis = res)
 
-      alert('Formulaire valide !');
     } else {
-      alert('Formulaire invalide !');
+      alert("formulaire invalide")
+
     }
   }
 }
