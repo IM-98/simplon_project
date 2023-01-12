@@ -11,24 +11,22 @@ import { AvisService } from 'src/app/services/avis.service';
 export class AvisComponent {
 
   avisForm!: FormGroup;
-  // listeAvis!: Avis[]
+  listeAvis!: Avis[]
+  newAvis!: Avis
 
   constructor(private formBuilder: FormBuilder, private router: Router, private avisService: AvisService) {}
 
   getAvis(){
-    this.avisService.getAllAvis().subscribe(res =>{ 
-      // this.listeAvis = res
+    this.avisService.getAllAvis().subscribe(res =>{ this.listeAvis = res
     console.log(res)})
   }
-
-
 
   ngOnInit(): void {
 
     this.getAvis()
   
     this.avisForm = this.formBuilder.group ({
-        username: ['', [
+        titre: ['', [
           Validators.required,
           Validators.minLength(5),
           Validators.maxLength(15)
@@ -37,29 +35,34 @@ export class AvisComponent {
           Validators.required,
           Validators.email
         ]],
-        message: ['', [
+        text: ['', [
           Validators.required,
-          Validators.minLength(500)
+          Validators.maxLength(500)
         ]]
 
       });
 }
-      get username() {
-        return this.avisForm.get('username') as FormControl;
+      get titre() {
+        return this.avisForm.get('titre') as FormControl;
       }
       get email() {
         return this.avisForm.get('email') as FormControl;
       }
-      get message() {
-        return this.avisForm.get('message') as FormControl;
+      get text() {
+        return this.avisForm.get('text') as FormControl;
       }
 
+
+      
   onSubmit() {
     if (this.avisForm!.valid) {
+      console.log("cliqué")
+      console.log(this.avisForm.value)
+      // this.avisService.newAvis(this.avisForm.value).subscribe(res => this.newAvis = res)
 
-      alert('Formulaire valide !');
     } else {
-      alert('Formulaire invalide !');
+      alert("formulaire invalide")
+
     }
   }
 }

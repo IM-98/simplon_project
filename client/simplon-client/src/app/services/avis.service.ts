@@ -15,16 +15,16 @@ export class AvisService {
     APIurl :string = "http://localhost:8080"
     
 
-    getAllAvis():Observable<any>{
-       return this.http.get<any>(`${this.APIurl}/avis`)
+    getAllAvis():Observable<Avis[]>{
+       return this.http.get<Avis[]>(`${this.APIurl}/avis`)
     }
 
     getAvisById(id: number):Observable<Avis>{
         return this.http.get<Avis>(`${this.APIurl}/avis/${id}`)
     }
 
-    newAvis(resa: Avis):Observable<Avis>{
-        return this.http.post<Avis>(`${this.APIurl}/avis/new`, resa)
+    newAvis(avis: Avis):Observable<Avis>{
+        return this.http.post<Avis>(`${this.APIurl}/avis/new`, avis)
     }
 
     deleteAvisById(id: number):Observable<Avis>{

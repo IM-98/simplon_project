@@ -1,43 +1,46 @@
+<div class="form_div">
 <h3 class="title">
   Laissez votre avis !
 </h3>
 
 <hr>
-<!-- <div class="avis">
+<div class="avis">
   <div class="comment" *ngFor="let avis of listeAvis">
     <h4 class="tm-text-primary text-center">{{avis.titre}}</h4><i class="date">{{avis.date}}</i><b> par {{avis.nomClient}}</b>
     <p>{{avis.text}}</p>
   </div>
   <hr>
 
-</div> -->
+</div>
 
 
-<form [formGroup]="avisForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="avisForm" (ngSubmit)="onSubmit()">
+    <app-input label="Titre" formControlName="titre" field="titre" placeholder="Votre Nom" type="text">
+    </app-input>
+  
+    <ng-container *ngIf="titre.touched && titre.errors">
+      <small *ngIf="titre.errors!=['required']">Champs requis</small>
+    </ng-container>
+  
+    <!-- Champ Email -->
+    <app-input label="Adresse E-Mail" formControlName="email" field="email" placeholder="Votre adresse E-Mail"
+      type="email"></app-input>
+  
+    <ng-container *ngIf="email.touched && email.errors">
+      <small *ngIf="email.errors!=['required']">Champs requis</small>
+    </ng-container>
+  
+    <!-- Champ Message -->
+    <app-input label="Message" formControlName="text" field="text" placeholder="Ecrivez ici votre message..."
+      type="textarea"></app-input>
+  
+    <ng-container *ngIf="text.touched && text.errors">
+      <small *ngIf="text.errors!=['required']">Champs requis</small>
+    </ng-container>
+  
+    <button type="submit">submit</button>
+    <!-- <app-button type="submit" className="submit" value="ENVOYEZ VOTRE AVIS"></app-button> -->
+  </form>
+</div>
 
   <!-- Champ Username -->
-  <app-input label="Nom/Prénom" formControlName="username" field="username" placeholder="Votre Nom" type="text">
-  </app-input>
-
-  <ng-container *ngIf="username.touched && username.errors">
-    <small *ngIf="username.errors!=['required']">Champs requis</small>
-  </ng-container>
-
-  <!-- Champ Email -->
-  <app-input label="Adresse E-Mail" formControlName="email" field="email" placeholder="Votre adresse E-Mail"
-    type="email"></app-input>
-
-  <ng-container *ngIf="email.touched && email.errors">
-    <small *ngIf="email.errors!=['required']">Champs requis</small>
-  </ng-container>
-
-  <!-- Champ Message -->
-  <app-input label="Message" formControlName="message" field="message" placeholder="Ecrivez ici votre message..."
-    type="textarea"></app-input>
-
-  <ng-container *ngIf="message.touched && message.errors">
-    <small *ngIf="message.errors!=['required']">Champs requis</small>
-  </ng-container>
-
-  <app-button type="submit" className="submit" value="ENVOYEZ VOTRE AVIS"></app-button>
-</form>
