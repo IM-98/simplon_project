@@ -61,4 +61,10 @@ public class ClientService implements IClientService{
         return client1;
 
     }
+
+	@Override
+	public Optional<Client> findByMail(String email) {
+		System.out.println(email+"jkdjkdhjkd");
+		return clientRepository.findByMail(email);
+	}
 }
