@@ -18,6 +18,7 @@ import { HttpClientModule} from "@angular/common/http"
 import { ReservationService } from './services/reservation.service';
 import { FooterComponent } from './_pages/footer/footer.component';
 import { CircleComponent } from './_pages/circle/circle.component';
+import { ListeReservationComponent } from './_pages/listeReservation/liste-reservation/liste-reservation.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CircleComponent } from './_pages/circle/circle.component';
     CartesComponent,
     FooterComponent,
     CircleComponent,
+    ListeReservationComponent,
   ],
   imports: [
     HttpClientModule,

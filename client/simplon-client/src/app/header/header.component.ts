@@ -12,6 +12,6 @@ export class HeaderComponent {
   nav: string[];
 
     constructor(private router:Router){
-      this.nav = ['cartes & menu','localisation','avis','contact'];
+      this.nav = ['cartes','localisation','avis','contact', "myReservation"];
     }
 }

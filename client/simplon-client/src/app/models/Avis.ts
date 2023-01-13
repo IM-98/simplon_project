@@ -4,6 +4,6 @@ export interface Avis {
     id: number;
     text: string;
     titre: string;
-    date: Date;
+    // date: Date;
     nomClient: string;
 }

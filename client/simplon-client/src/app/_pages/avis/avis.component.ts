@@ -62,10 +62,10 @@ export class AvisComponent implements OnInit {
     if (this.avisForm!.valid) {
      
       this.avisService.newAvis(this.avisForm.value).subscribe(res => this.listeAvis.push(res))
-
+                                                                    // this.listeAvis.push(res)
     } else {
       alert("formulaire invalide")
 
     }
-  }
+  }  
 }
