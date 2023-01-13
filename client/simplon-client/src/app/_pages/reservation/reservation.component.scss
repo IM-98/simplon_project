@@ -1,30 +1,30 @@
-ul{
-    display: flex;
-    z-index: 1000;
-    position: fixed;
-}
+// ul{
+//     display: flex;
+//     z-index: 1000;
+//     position: fixed;
+// }
 
-.res__card {
-    background-color: white;
-    opacity: 0.7;
-    display: flex;
-    flex-direction: column;
-    margin: auto 10px;
-    width: 150px;
-    height: 150px;
-    border-radius: 40px;
-    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
-    cursor: pointer;
-    transition: 0.4s;
-    padding: 20px;
-    justify-content: space-between;
-}
+// .res__card {
+//     background-color: white;
+//     opacity: 0.7;
+//     display: flex;
+//     flex-direction: column;
+//     margin: auto 10px;
+//     width: 150px;
+//     height: 150px;
+//     border-radius: 40px;
+//     box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+//     cursor: pointer;
+//     transition: 0.4s;
+//     padding: 20px;
+//     justify-content: space-between;
+// }
 
-.res__card:hover {
-    transform: scale(0.9, 0.9);
-    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
-        -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
-}
+// .res__card:hover {
+//     transform: scale(0.9, 0.9);
+//     box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+//         -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+// }
 
 h1 {
   display: flex;
@@ -45,11 +45,12 @@ form {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 450px;
   transform: translate(-50%, -50%);
   gap: 1em;
   padding: 1em;
   font-weight: bold;
-  font-size: medium;
+  font-size: 1em;
 
   h3 {
     display: flex;
@@ -60,4 +61,37 @@ form {
   small {
     color: red;
   }
+}
+
+div.elem-group {
+  margin: 0.2em ;
+}
+
+div.elem-group.inlined {
+  width: 300px;
+  display: inline-block;
+}
+
+label, select {
+ display: flex;
+ padding-left: 1.5em;
+ width: 300px;
+
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 7px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 50px;
 }
