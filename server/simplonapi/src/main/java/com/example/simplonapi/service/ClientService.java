@@ -14,7 +14,6 @@ public class ClientService implements IClientService{
     @Autowired
     ClientRepository clientRepository;
 
-
     @Override
     public Client save(Client client) {
         return clientRepository.save(client);
@@ -28,11 +27,6 @@ public class ClientService implements IClientService{
     @Override
     public Iterable<Client> findAll() {
         return clientRepository.findAll();
-    }
-
-    @Override
-    public Client findByMail(String email) {
-        return clientRepository.findClientByMail(email);
     }
 
     @Override
@@ -61,10 +55,8 @@ public class ClientService implements IClientService{
         return client1;
 
     }
-
 	@Override
 	public Optional<Client> findByMail(String email) {
-		System.out.println(email+"jkdjkdhjkd");
-		return clientRepository.findByMail(email);
+		return clientRepository.findClientByMail(email);
 	}
 }
