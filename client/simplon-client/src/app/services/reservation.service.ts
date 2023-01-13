@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { Client } from "../models/Client";
 import { Reservation } from "../models/Reservation";
 
 
@@ -30,5 +31,9 @@ export class ReservationService {
 
     deleteReservationById(id: number):Observable<Reservation>{
         return this.http.delete<Reservation>(`${this.APIurl}/reservations/${id}`)
+    }
+
+    getReservationByClient(email: string):Observable<Client>{
+        return this.http.get<Client>(`${this.APIurl}/clients/${email}`)
     }
 }

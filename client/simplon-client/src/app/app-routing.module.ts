@@ -7,6 +7,7 @@ import { ContactComponent } from './_pages/contact/contact.component';
 import { MenuComponent } from './_pages/menu/menu.component';
 import { ReservationComponent } from './_pages/reservation/reservation.component';
 import { CartesComponent } from './_pages/cartes/cartes.component';
+import { ListeReservationComponent } from './_pages/listeReservation/liste-reservation/liste-reservation.component';
 
 const routes: Routes = [
 
@@ -38,6 +39,10 @@ const routes: Routes = [
 {
   path: "reservation",
   component: ReservationComponent,
+},
+{
+  path: "myReservation",
+  component: ListeReservationComponent
 }
 
 ];
