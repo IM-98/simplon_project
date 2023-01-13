@@ -34,6 +34,6 @@ export class ReservationService {
     }
 
     getReservationByClient(email: string):Observable<Client>{
-        return this.http.get<Client>(`${this.APIurl}/clients/${email}`)
+        return this.http.get<Client>(`${this.APIurl}/clients/reservation/${email}`)
     }
 }
