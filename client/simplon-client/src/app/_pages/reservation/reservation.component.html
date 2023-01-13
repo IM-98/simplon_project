@@ -32,12 +32,12 @@
 <form [formGroup]="rezaForm" (ngSubmit)="onSubmit()">
   <div class="elem-group">
     <label for="name">Votre Nom</label>
-    <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
+    <input type="text" id="name" name="visitor_name" formControlName="nom" placeholder="John Doe">
   </div>
 
   <div class="elem-group">
     <label for="email">Votre E-mail</label>
-    <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+    <input type="email" id="email" name="visitor_email" formControlName="email" placeholder="john.doe@email.com">
   </div>
   <!-- <div class="elem-group">
     <label for="phone">Votre Téléphone</label>
@@ -45,17 +45,17 @@
   </div> -->
   <div class="elem-group">
     <label for="adult">Nombre Adultes</label>
-    <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+    <input type="number" id="adult" name="total_adults" formControlName="nbAdults" placeholder="0" min="1">
   </div>
 
   <div class="elem-group">
     <label for="checkin-date">Date Réservation</label>
-    <input type="date" id="checkin-date" name="checkin" required>
+    <input type="date" id="checkin-date" formControlName="dateReservation" name="checkin" >
   </div>
 
-  <div class="elem-group">
+  <div class="elem-group" >
     <label for="room-selection">Selectionnez Carte</label>
-    <select id="room-selection" name="room_preference" required>
+    <select id="room-selection" formControlName="cartes" name="room_preference" >
         <option value="">Liste de Cartes</option>
         <option value="aventurier">Aventurier</option>
         <option value="balboa">Balboa</option>
