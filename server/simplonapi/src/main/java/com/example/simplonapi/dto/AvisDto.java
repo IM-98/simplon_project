@@ -3,8 +3,6 @@ package com.example.simplonapi.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.example.simplonapi.entity.Avis;
 import com.example.simplonapi.entity.Client;
 import com.example.simplonapi.service.IClientService;
@@ -49,7 +47,6 @@ public class AvisDto {
 	}
 	
 	public  static Avis toAvis(AvisDto avisDto, IClientService clientService) {
-		System.out.println(avisDto.email+"jkdjkdhjkd");
 		Client client= clientService.findByMail(avisDto.email).get();
 		Avis avis=Avis.builder().client(client).text(avisDto.text).titre(avisDto.titre).build();
 		return avis;
