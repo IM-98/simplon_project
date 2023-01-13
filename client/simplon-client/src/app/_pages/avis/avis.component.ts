@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Avis } from 'src/app/models/Avis';
@@ -8,7 +8,7 @@ import { AvisService } from 'src/app/services/avis.service';
   templateUrl: './avis.component.html',
   styleUrls: ['./avis.component.scss']
 })
-export class AvisComponent {
+export class AvisComponent implements OnInit {
 
   avisForm!: FormGroup;
   listeAvis!: Avis[]
@@ -60,9 +60,8 @@ export class AvisComponent {
       
   onSubmit() {
     if (this.avisForm!.valid) {
-      console.log("cliqué")
-      console.log(this.avisForm.value)
-      // this.avisService.newAvis(this.avisForm.value).subscribe(res => this.newAvis = res)
+     
+      this.avisService.newAvis(this.avisForm.value).subscribe(res => this.listeAvis.push(res))
 
     } else {
       alert("formulaire invalide")
