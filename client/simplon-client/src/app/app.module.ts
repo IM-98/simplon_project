@@ -14,7 +14,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LocalisationComponent } from './_pages/localisation/localisation.component';
 import { HomeComponent } from './_pages/home/home.component';
 import { CartesComponent } from './_pages/cartes/cartes.component';
-
+import { HttpClientModule} from "@angular/common/http"
+import { ReservationService } from './services/reservation.service';
+import { FooterComponent } from './_pages/footer/footer.component';
+import { CircleComponent } from './_pages/circle/circle.component';
 
 @NgModule({
   declarations: [
@@ -28,15 +31,20 @@ import { CartesComponent } from './_pages/cartes/cartes.component';
     AvisComponent,
     LocalisationComponent,
     HomeComponent,
-    CartesComponent
+    CartesComponent,
+    FooterComponent,
+    CircleComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

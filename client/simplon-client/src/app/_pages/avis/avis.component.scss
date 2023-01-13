@@ -1,15 +1,11 @@
 form {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   gap: 0.8em;
   font-weight: bold;
   font-size: medium;
-  margin-top: 5%;
-
+  padding: 20px 50px;
+  margin: 0 auto;
   h3 {
     display: flex;
     justify-content: center;
@@ -48,4 +44,9 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form_div{
+  display: flex;
+  flex-direction: column;
 }

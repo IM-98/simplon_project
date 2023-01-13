@@ -18,7 +18,7 @@ public class AvisDto {
 	private String text;
 	
 	private String titre;
-	
+
 	//private Date date;
 	
 	private String  nomClient;
@@ -27,6 +27,7 @@ public class AvisDto {
 	
 	public AvisDto(Avis avis) {
 		//this.date=avis.getDate();
+
 		this.nomClient=avis.getClient().getNom();
 		this.titre=avis.getTitre();
 		this.text=avis.getText();
@@ -50,5 +51,6 @@ public class AvisDto {
 		Avis avis=Avis.builder().client(client).text(avisDto.text).titre(avisDto.titre).build();
 		return avis;
 	}
+
 
 }
