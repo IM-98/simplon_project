@@ -23,10 +23,10 @@ public class ClientController {
         return iClientService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Optional<Client> getClientById(@PathVariable("id") int id){
-        return iClientService.findById(id);
-    }
+//    @GetMapping("/{id}")
+//    public Optional<Client> getClientById(@PathVariable("id") int id){
+//        return iClientService.findById(id);
+//    }
 
     @PutMapping("/update")
     public Client updateClient(@RequestBody Client client){
@@ -43,4 +43,9 @@ public class ClientController {
         return iClientService.deleteByID(id);
     }
 
+    @GetMapping  ("/{email}")
+    public Client findReservationByClient(@PathVariable("email") String email){
+        System.out.println(email);
+        return iClientService.findByMail(email);
+    }
 }

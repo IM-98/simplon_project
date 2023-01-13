@@ -31,6 +31,11 @@ public class ClientService implements IClientService{
     }
 
     @Override
+    public Client findByMail(String email) {
+        return clientRepository.findClientByMail(email);
+    }
+
+    @Override
     public String deleteByID(int id) {
 
          clientRepository.deleteById(id);

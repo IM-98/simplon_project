@@ -12,6 +12,8 @@ public interface IClientService {
 
     Iterable<Client> findAll();
 
+    Client findByMail(String email);
+
     String deleteByID(int id);
 
     String delete(Client client);
