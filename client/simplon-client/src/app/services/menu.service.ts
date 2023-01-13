@@ -24,8 +24,8 @@ export class CarteService {
         return this.http.get<Menu>(`${this.APIurl}/menus/${id}`)
     }
 
-    newAvis(resa: Menu):Observable<Menu>{
-        return this.http.post<Menu>(`${this.APIurl}/cartes/new`, resa)
+    newAvis(menu: Menu):Observable<Menu>{
+        return this.http.post<Menu>(`${this.APIurl}/cartes/new`, menu)
     }
 
     deleteAvisById(id: number):Observable<Menu>{

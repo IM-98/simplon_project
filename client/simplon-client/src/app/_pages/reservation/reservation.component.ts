@@ -14,10 +14,13 @@ export class ReservationComponent implements OnInit {
 
   rezaForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private reservationService: ReservationService) {}
 
   ngOnInit(): void {
     this.rezaForm = this.formBuilder.group ({
+        prenom: ['', [
+          Validators.required,
+        ]],
         nom: ['', [
           Validators.required,
         ]],
@@ -25,15 +28,10 @@ export class ReservationComponent implements OnInit {
           Validators.required,
           Validators.email
         ]],
-        nbAdults: ['', [
+        nbrPersonne: ['', [
           Validators.required,
-          Validators.minLength(1)
         ]],
-        dateReservation: ['', [
-          Validators.required,
-
-        ]],
-        cartes: ['', [
+        horaire: ['', [
           Validators.required,
         ]]
 
@@ -42,23 +40,25 @@ export class ReservationComponent implements OnInit {
       get nom() {
         return this.rezaForm.get('nom') as FormControl;
       }
+      get prenom() {
+        return this.rezaForm.get('prenom') as FormControl;
+      }
       get email() {
         return this.rezaForm.get('email') as FormControl;
       }
-      get nbAdults() {
-        return this.rezaForm.get('nbAdults') as FormControl;
+      get nbrPersonne() {
+        return this.rezaForm.get('nbrPersonne') as FormControl;
       }
-      get dateReservation() {
-        return this.rezaForm.get('dateReservation') as FormControl;
+      get horaire() {
+        return this.rezaForm.get('horaire') as FormControl;
       }
-      get cartes() {
-        return this.rezaForm.get('cartes') as FormControl;
-      }
+     
 
   onSubmit() {
     if (this.rezaForm!.valid) {
-
-      alert('Formulaire valide !');
+      console.log(this.rezaForm.value)
+      this.reservationService.newReservation(this.rezaForm.value).subscribe(res  => res)
+      
     } else {
       alert('Formulaire invalide !');
     }
