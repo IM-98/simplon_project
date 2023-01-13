@@ -43,4 +43,9 @@ public class ClientController {
         return iClientService.deleteByID(id);
     }
 
+    @GetMapping  ("/reservation/{email}")
+    public Optional<Client> findReservationByClient(@PathVariable("email") String email){
+        System.out.println(email);
+        return iClientService.findByMail(email);
+    }
 }

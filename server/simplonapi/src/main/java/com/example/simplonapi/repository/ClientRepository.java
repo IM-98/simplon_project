@@ -10,7 +10,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClientRepository extends CrudRepository<Client,Integer> {
-
-	//@Query(value="SELECT * FROM client  WHERE mail=?1",nativeQuery =true)
-	Optional<Client> findByMail(String email);
+    Client findClientByMail(String email);
 }
