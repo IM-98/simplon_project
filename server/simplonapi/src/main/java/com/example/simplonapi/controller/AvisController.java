@@ -36,8 +36,9 @@ public class AvisController {
 		}
 	
 	@PostMapping(path="/new")
-	public Avis addAvis(@RequestBody AvisDto avis) {
-		return avisService.save(AvisDto.toAvis(avis, clientService));
+	public AvisDto addAvis(@RequestBody AvisDto avis) {
+		Avis avisSaved=avisService.save(AvisDto.toAvis(avis, clientService));
+		return  AvisDto.toAvisDto(avisSaved);
 	}
 	
 	@GetMapping(path="/{id}")
