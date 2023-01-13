@@ -1,1 +1,73 @@
 
+<!-- <h1>Liste des réservations : </h1>
+<div class="reza">
+  <ul>
+    <li *ngFor="let reservation of listeReservations" class="res__card">
+      <span>
+        Nombre de personne:
+        {{reservation.nbrPersonne}}
+      </span>
+      <span>
+        Date:
+        {{reservation.horaire}}
+      </span>
+      <button (click)=getReservationById(reservation.id)> Voir détails</button>
+    </li>
+  </ul>
+</div> -->
+<!--
+<form [formGroup]="rezaForm" (ngSubmit)="onSubmit()">
+   <h3>Entrez votre E-Mail pour retrouver votre réservation : </h3>
+   Champ Email
+  <app-input label="Adresse E-Mail" formControlName="email" field="email" placeholder="Votre adresse E-Mail"
+    type="email">
+  </app-input>
+
+  <ng-container *ngIf="email.touched && email.errors">
+    <small *ngIf="email.errors!=['required']">Champs requis</small>
+  </ng-container>
+  <app-button type="submit" className="submit" value="ENVOYER"></app-button>
+</form> -->
+
+<form [formGroup]="rezaForm" (ngSubmit)="onSubmit()">
+  <div class="elem-group">
+    <label for="name">Votre Nom</label>
+    <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
+  </div>
+
+  <div class="elem-group">
+    <label for="email">Votre E-mail</label>
+    <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+  </div>
+  <!-- <div class="elem-group">
+    <label for="phone">Votre Téléphone</label>
+    <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+  </div> -->
+  <div class="elem-group">
+    <label for="adult">Nombre Adultes</label>
+    <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+  </div>
+
+  <div class="elem-group">
+    <label for="checkin-date">Date Réservation</label>
+    <input type="date" id="checkin-date" name="checkin" required>
+  </div>
+
+  <div class="elem-group">
+    <label for="room-selection">Selectionnez Carte</label>
+    <select id="room-selection" name="room_preference" required>
+        <option value="">Liste de Cartes</option>
+        <option value="aventurier">Aventurier</option>
+        <option value="balboa">Balboa</option>
+        <option value="onirique">Onirique</option>
+    </select>
+  </div>
+
+  <!-- <div class="elem-group">
+    <label for="message">Une Question ?</label>
+    <textarea id="message" name="visitor_message" placeholder="Indiquez nous si vous avez des questions " required></textarea>
+  </div> -->
+  <app-button type="submit" className="submit" value="RESERVER"></app-button>
+</form>
+
+

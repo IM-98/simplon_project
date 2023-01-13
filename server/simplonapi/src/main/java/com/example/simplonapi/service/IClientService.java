@@ -17,4 +17,6 @@ public interface IClientService {
     String delete(Client client);
 
     Client update( Client client);
+
+    Optional<Client> findByMail(String email);
 }
